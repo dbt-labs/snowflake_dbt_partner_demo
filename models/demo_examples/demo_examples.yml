@@ -19,4 +19,11 @@ models:
 
   - name: get_area_of_circle
     description: demo to show udfs
-        
+  
+  - name: my_first_dbt_model
+    description: first example model
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
