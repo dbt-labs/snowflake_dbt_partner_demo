@@ -31,6 +31,7 @@ select
     line_item.ship_mode,
     line_item.extended_price,
     line_item.quantity,
+    line_item.ship_mode||line_item.quantity as test_column,
     
     -- extended_price is actually the line item total,
     -- so we back out the extended price per item
