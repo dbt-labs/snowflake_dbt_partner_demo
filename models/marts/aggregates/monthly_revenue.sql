@@ -4,3 +4,4 @@ from {{ metrics.calculate(
     grain='month',
     dimensions=['priority_code']
 ) }}
+
