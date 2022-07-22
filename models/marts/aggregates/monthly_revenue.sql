@@ -1,8 +1,6 @@
--- depends_on: {{ ref('fct_orders') }}
-
 select * 
-from {{ metrics.metric(
-    metric_name='revenue',
+from {{ metrics.calculate(
+    metric('revenue'),
     grain='month',
     dimensions=['priority_code']
 ) }}
