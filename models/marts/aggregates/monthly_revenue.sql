@@ -1,6 +1,6 @@
 select * 
-from {{ metrics.calculate(
-    metric('revenue'),
+from {{ metrics.metric(
+    metric_name='revenue',
     grain='month',
     dimensions=['priority_code']
 ) }}
