@@ -3,16 +3,15 @@ version: 2
 exposures:
   - name: yearly_part_rollup
     description: |
-      # An h1 header
+      # Parts by year
       ============
 
-      Paragraphs are separated by a blank line.
+      This dashboard allows us to look at the count of all the parts we have over time rolled up to a yearly cadence.
 
-      2nd paragraph. *Italic*, **bold**, and `monospace`
-      Itemized lists look like:
-        * this one
-        * that one
-        * the other one
+      Its divided into:
+        * *small* parts
+        * `medium` parts
+        * **large** parts
     
     # type could be {dashboard, notebook, analysis, ml, application}
     type: dashboard 
@@ -25,7 +24,7 @@ exposures:
     
     # documentation purposes for point of contact if stuff breaks
     owner:
-      name: DBT User Bob
+      name: dbt user Bob
       email: dbtuserbob@getdbt.com
     
     # IMPORTANT: determines the lineage relationship of the exposure construct to the rest of your DAG
