@@ -44,7 +44,9 @@ vars:
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 models:
-  
+  +grants:
+    select: ['transformer']
+
   tpch:
     staging:
       +materialized: view
