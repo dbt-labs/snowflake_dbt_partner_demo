@@ -6,4 +6,4 @@ packages:
   - package: dbt-labs/dbt_external_tables
     version: 0.8.0
   - package: dbt-labs/metrics
-    version: 0.2.0
+    version: 0.3.2
