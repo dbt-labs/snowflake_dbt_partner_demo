@@ -1,6 +1,6 @@
 version: 2
 
-models:
+analyses:
   - name: select_from_orders_example
     description: >
       This is an example of an analysis model.
