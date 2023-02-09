@@ -13,7 +13,7 @@ profile: 'tpch'
 # These configurations specify where dbt should look for different types of files.
 # The `models-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-model-paths: ["models"]
+model-paths: ["models", "src"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
 seed-paths: ["data"]
@@ -55,7 +55,12 @@ models:
     marts:
       core:
         materialized: table
-      
+
+    utils:
+      materialized: table
+      +schema: python_utils
+      +tags: "python_utils"
+
 seeds:
   tpch:
     snowflake_contract_rates:
