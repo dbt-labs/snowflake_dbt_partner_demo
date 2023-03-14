@@ -24,6 +24,34 @@ models:
       - name: comment
         description: '{{ doc("comment") }}'
 
+  - name: stg_tpch_nations
+    description: staging layer for nations data
+    columns:
+      - name: nation_key
+        description: primary key of the model
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: nation name
+      - name: region_key
+        description: foreign key to stg_tpch_regions
+      - name: comment
+        description: additional commentary             
+ 
+  - name: stg_tpch_regions
+    description: staging layer for regions data
+    columns:
+      - name: region_key
+        description: primary key of the model
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: region name
+      - name: comment
+        description: '{{ doc("comment") }}'
+
   - name: stg_tpch_line_items
     description: staging layer for line items data
     columns:
@@ -65,21 +93,6 @@ models:
       - name: comment
         description: '{{ doc("comment") }}'
 
-  - name: stg_tpch_nations
-    description: staging layer for nations data
-    columns:
-      - name: nation_key
-        description: primary key of the model
-        tests:
-          - unique
-          - not_null
-      - name: name
-        description: nation name
-      - name: region_key
-        description: foreign key to stg_tpch_regions
-      - name: comment
-        description: additional commentary             
- 
   - name: stg_tpch_orders
     description: staging layer for orders data
     columns:
@@ -146,19 +159,6 @@ models:
         description: container of the part
       - name: retail_price
         description: '{{ doc("retail_price") }}'
-      - name: comment
-        description: '{{ doc("comment") }}'
-
-  - name: stg_tpch_regions
-    description: staging layer for regions data
-    columns:
-      - name: region_key
-        description: primary key of the model
-        tests:
-          - unique
-          - not_null
-      - name: name
-        description: region name
       - name: comment
         description: '{{ doc("comment") }}'
 
