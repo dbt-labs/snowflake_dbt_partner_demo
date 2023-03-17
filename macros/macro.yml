@@ -63,3 +63,6 @@ macros:
       - name: return_fields
         type: STRING
         description: fields you would like returned for analysis
+
+  - name: kwargs_example
+    description: A simple example to showcase how to call kwargs from within a macro
