@@ -55,6 +55,11 @@ models:
     marts:
       core:
         materialized: table
+        +docs:
+          node_color: "purple"
+      aggregates:
+        +docs:
+          node_color: "black"
       
 seeds:
   tpch:
