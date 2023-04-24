@@ -10,6 +10,7 @@ with customer as (
     select * from {{ ref('stg_tpch_customers') }}
 
 ),
+-- add comment 
 nation as (
 
     select * from {{ ref('stg_tpch_nations') }}
