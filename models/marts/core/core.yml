@@ -14,7 +14,7 @@ models:
         tests:
           - accepted_values:
               values: ['AFRICA','MIDDLE EAST','ASIA','EUROPE']
-              severity: warn
+              severity: error
       - name: name
         description: customer id
       - name: address
