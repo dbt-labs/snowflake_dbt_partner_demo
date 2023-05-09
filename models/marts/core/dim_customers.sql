@@ -1,7 +1,8 @@
 {{
     config(
         materialized = 'table',
-        transient=false
+        transient=false,
+        docs={'node_color': 'red'}
     )
 }}
 
