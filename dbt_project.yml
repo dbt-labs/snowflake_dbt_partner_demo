@@ -3,8 +3,8 @@
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
 name: 'tpch'
-version: '1.4.0'
-require-dbt-version: '>=1.4.0'
+version: '1.5.0'
+require-dbt-version: '>=1.5.0'
 config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
