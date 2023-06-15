@@ -21,7 +21,6 @@ models:
         data_type: int
         constraints:
           - type: not_null
-          - type: unique
         tests:
           - unique
           - not_null
