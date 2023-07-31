@@ -1,7 +1,7 @@
 {{
     config(
         materialized = 'dynamic_table',
-        warehouse = 'transforming',
+        snowflake_warehouse = 'transforming',
         target_lag = target_lag_environment(),
         on_configuration_change = 'apply',
     )
