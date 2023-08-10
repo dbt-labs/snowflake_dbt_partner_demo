@@ -53,7 +53,7 @@ models:
       +materialized: view
 
     marts:
-      core:
+      tpch_marts:
         materialized: table
       
 seeds:
