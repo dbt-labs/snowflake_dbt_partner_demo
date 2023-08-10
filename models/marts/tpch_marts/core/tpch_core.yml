@@ -1,33 +1,76 @@
 version: 2
 
+groups:
+  - name: core_data
+    owner:
+      name: Company Analytics Team
+      email: company@real.company.com
+
 models:
+<<<<<<< HEAD:models/marts/tpch_marts/core/tpch_core.yml
   - name: dim_tpch_customers
+=======
+  - name: dim_customers
+    group: core_data
+    access: public
+    latest_version: 1
+>>>>>>> 9a2daf7f03719eae698d5977f8074f568df9d306:models/marts/core/core.yml
     description: Customer dimensions table
+    config:
+      contract:
+        enforced: true
     columns:
       - name: customer_key
         description: Primary key on the customers table
+        data_type: int
+        constraints:
+          - type: not_null
         tests:
           - unique
           - not_null
       - name: region
         description: region name
+        data_type: text
         tests:
           - accepted_values:
               values: ['AFRICA','MIDDLE EAST','ASIA','EUROPE','AMERICA']
               severity: warn
       - name: name
         description: customer id
+        data_type: text
       - name: address
         description: address of the customer
+        data_type: text
       - name: nation
         description: nation name
+        data_type: text
+      - name: nation_key
+        description: 'Nation key'
+        data_type: int
+        tests:
+         - not_null
       - name: phone_number
         description: phone number of the customer
+        data_type: text
       - name: account_balance
         description: '{{ doc("account_balance") }}'
+        data_type: int
       - name: market_segment
         description: market segment of the customer
+        data_type: text
 
+    versions: 
+      - v: 1
+        config:
+          alias: dim_customers
+          materialised: table
+          transient: false
+      - v: 2
+        config:
+          materialised: view
+        columns:
+          - include: all
+            exclude: [nation_key]
 
   - name: dim_tpch_parts
     description: Parts dimensions table
@@ -142,7 +185,7 @@ models:
         description: foreign key for customers
         tests:
           - relationships:
-              to: ref('dim_customers')
+              to: ref('dim_customers', v=1)
               field: customer_key
               severity: error
       - name: order_date
@@ -156,7 +199,9 @@ models:
       - name: ship_priority
         description: numeric representation of the shipping priority, zero being the default
       - name: order_count
-        description: count of order
+        description: number of orders (includes returns)
+      - name: return_count
+        description: How many line items have the return flag in this order?
       - name: gross_item_sales_amount
         description: '{{ doc("gross_item_sales_amount") }}'
       - name: item_discount_amount
