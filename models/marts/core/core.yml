@@ -69,6 +69,7 @@ models:
             exclude: [nation_key]
 
   - name: dim_parts
+    access: public
     description: Parts dimensions table
     columns:
       - name: part_key
@@ -113,6 +114,7 @@ models:
         description: '{{ doc("account_balance") }}'
  
   - name: fct_order_items
+    access: public
     description: order items fact table
     columns:
       - name: order_item_key
