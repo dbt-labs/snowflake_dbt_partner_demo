@@ -48,7 +48,7 @@ models:
   +grants:
     select: ['transformer']
 
-  tpch:
+  central_data_team_partner_eng_inc:
     staging:
       +materialized: view
 
