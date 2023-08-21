@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 with
 
 source as (
@@ -28,12 +27,4 @@ renamed as (
 )
 
 select * from renamed
-=======
-select
-    id as order_id,
-    user_id as customer_id,
-    order_date,
-    status
 
-from {{ source('jaffle_shop','orders') }}
->>>>>>> 9a2daf7f03719eae698d5977f8074f568df9d306
