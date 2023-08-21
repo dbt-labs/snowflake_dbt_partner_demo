@@ -7,14 +7,11 @@ groups:
       email: company@real.company.com
 
 models:
-<<<<<<< HEAD:models/marts/tpch_marts/core/tpch_core.yml
+
   - name: dim_tpch_customers
-=======
-  - name: dim_customers
     group: core_data
     access: public
     latest_version: 1
->>>>>>> 9a2daf7f03719eae698d5977f8074f568df9d306:models/marts/core/core.yml
     description: Customer dimensions table
     config:
       contract:
@@ -72,12 +69,8 @@ models:
           - include: all
             exclude: [nation_key]
 
-<<<<<<< HEAD:models/marts/tpch_marts/core/tpch_core.yml
   - name: dim_tpch_parts
-=======
-  - name: dim_parts
     access: public
->>>>>>> 384ef16ec7818d09ae9b3a7c85bc4334a4aaaf22:models/marts/core/core.yml
     description: Parts dimensions table
     columns:
       - name: part_key
@@ -121,12 +114,8 @@ models:
       - name: account_balance
         description: '{{ doc("account_balance") }}'
  
-<<<<<<< HEAD:models/marts/tpch_marts/core/tpch_core.yml
   - name: fct_tpch_order_items
-=======
-  - name: fct_order_items
     access: public
->>>>>>> 384ef16ec7818d09ae9b3a7c85bc4334a4aaaf22:models/marts/core/core.yml
     description: order items fact table
     columns:
       - name: order_item_key
