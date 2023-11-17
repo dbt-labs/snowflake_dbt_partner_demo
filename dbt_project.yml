@@ -2,10 +2,12 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'tpch'
-version: '1.4.0'
-require-dbt-version: '>=1.4.0'
+name: 'central_data_team_partner_eng_inc'
+version: '1.5.0'
+require-dbt-version: '>=1.6.0'
 config-version: 2
+dbt-cloud:
+  project-id: "64586"
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'tpch'
@@ -48,17 +50,10 @@ models:
   +grants:
     select: ['transformer']
 
-  tpch:
+  central_data_team_partner_eng_inc:
     staging:
       +materialized: view
 
     marts:
-      core:
+      tpch_marts:
         materialized: table
-      
-seeds:
-  tpch:
-    snowflake_contract_rates:
-      +column_types:
-        effective_date: DATE
-        rate: NUMBER   

@@ -19,4 +19,12 @@ models:
 
   - name: get_area_of_circle
     description: demo to show udfs
+  
+  - name: dynamic_table
+    description: a demo of a dynamic table built on the jaffle shop data 
+    columns:
+      - name: order_month
+        tests: 
+            - not_null
+
         
