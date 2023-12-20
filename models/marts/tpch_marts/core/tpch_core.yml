@@ -184,7 +184,7 @@ models:
         description: foreign key for customers
         tests:
           - relationships:
-              to: ref('dim_customers', v=1)
+              to: ref('dim_tpch_customers', v=1)
               field: customer_key
               severity: error
       - name: order_date
