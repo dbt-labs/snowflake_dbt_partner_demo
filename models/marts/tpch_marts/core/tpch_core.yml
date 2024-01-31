@@ -30,7 +30,7 @@ models:
         data_type: text
         tests:
           - accepted_values:
-              values: ['AFRICA','MIDDLE EAST', 'EUROPE','AMERICA']
+              values: ['AFRICA','MIDDLE EAST', 'ASIA', 'EUROPE','AMERICA']
               severity: error
       - name: name
         description: customer id
