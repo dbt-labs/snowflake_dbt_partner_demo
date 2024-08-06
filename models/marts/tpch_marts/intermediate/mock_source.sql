@@ -1,0 +1,1 @@
+select * from ANALYTICS.dbt_hwatson.test_table
