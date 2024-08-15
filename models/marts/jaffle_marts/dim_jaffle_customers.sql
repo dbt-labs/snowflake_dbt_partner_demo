@@ -60,3 +60,4 @@ joined as (
 )
 
 select * from joined
+-- show a change in a model triggering a pr
