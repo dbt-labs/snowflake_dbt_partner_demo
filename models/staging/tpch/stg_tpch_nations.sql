@@ -18,3 +18,4 @@ renamed as (
 )
 
 select * from renamed
+-- make a comment to show ci process
