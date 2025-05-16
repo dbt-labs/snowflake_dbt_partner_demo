@@ -43,6 +43,9 @@ vars:
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
+flags:
+  enable_iceberg_materializations: true
+
 
 models:
   +grants:
