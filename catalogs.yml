@@ -1,8 +1,11 @@
 catalogs:
-  - name: amy_catalog
+  - name: standard_catalog
     active_write_integration: snowflake_write_integration
     write_integrations:
       - name: snowflake_write_integration
-        external_volume: S3_ICEBERG_SNOW
-        table_format: iceberg
-        catalog_type: BUILT_IN
+        external_volume: S3_ICEBERG_SNOW ##S3 bucket for iceberg data storage
+        table_format: iceberg 
+        catalog_type: built_in 
+
+
+ 

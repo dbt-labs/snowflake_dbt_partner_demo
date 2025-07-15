@@ -1,12 +1,11 @@
 {{
     config(
-        materialized='table',
-        catalog = 'amy_catalog'
+        materialized='incremental',
+        catalog ='standard_catalog',
+        base_location_root = 'test'
 
     )
 }}
 
 
-
-select 
-1 as foo 
+select * from {{ ref('dim_customers_v2') }}
