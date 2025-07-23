@@ -48,7 +48,7 @@ models:
   +grants:
     select: ['transformer']
 
-  central_data_team_partner_eng_inc:
+  snowflake_xplatform_demo:
     staging:
       +materialized: view
 

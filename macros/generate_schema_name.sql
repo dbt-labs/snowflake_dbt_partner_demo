@@ -3,7 +3,7 @@
 {# non-specified schemas go to the default target schema #}
 {% if custom_schema_name is none %}
 {{ default_schema }}
-5
+
 {# specified custom schema names go to the schema name prepended with
 the the default schema name in prod (as this is an example project we
 want the schemas clearly labeled) #}
