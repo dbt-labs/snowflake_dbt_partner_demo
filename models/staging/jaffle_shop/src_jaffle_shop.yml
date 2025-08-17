@@ -12,9 +12,11 @@ sources:
             tests:
               - not_null
               - unique
-        
+
       - name: orders
         identifier: orders
+        config:
+          loaded_at_field: _etl_loaded_at
         loaded_at_field: _etl_loaded_at
         config:
           freshness:
