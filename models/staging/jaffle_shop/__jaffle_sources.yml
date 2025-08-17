@@ -18,6 +18,10 @@ sources:
           #   count: 48
           #   period: hour
           loaded_at_field: ordered_at
+            # error_after:
+            #   count: 48
+            #   period: hour
+        loaded_at_field: ordered_at
       - name: raw_items
         description: Items included in an order
       - name: raw_stores
@@ -30,6 +34,10 @@ sources:
           #   count: 48
           #   period: hour
           loaded_at_field: opened_at
+            # error_after:
+            #   count: 48
+            #   period: hour
+        loaded_at_field: opened_at
       - name: raw_products
         description: One record per SKU for items sold in stores
       - name: raw_supplies
