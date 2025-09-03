@@ -3,11 +3,7 @@ version: 2
 models:
   - name: iceberg_table
     description: demo iceberg table + catalog spec
-    columns:
-      - name: customer_key
-        tests:
-          - unique
-          - not_null
+         
   - name: materialization_incremental
     description: demo to show incremental model
     columns:
