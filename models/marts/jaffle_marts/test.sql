@@ -9,4 +9,3 @@ SELECT
     customer_type
 FROM {{ ref('dim_jaffle_customers') }}
 ORDER BY lifetime_spend DESC
-limit 10
