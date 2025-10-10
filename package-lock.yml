@@ -1,8 +1,14 @@
 packages:
-- package: dbt-labs/codegen
-  version: 0.9.0
+- git: https://github.com/dbt-labs/dbt-audit-helper.git
+  name: audit_helper
+  revision: |
+    014af559efd9dd1fa6551cb348fcc6d4def9a1e7
+  __unrendered__:
+    __unrendered__: {}
+- package: godatadriven/dbt_date
+  name: dbt_date
+  version: 0.10.0
 - package: dbt-labs/dbt_utils
-  version: 1.1.0
-- package: dbt-labs/dbt_external_tables
-  version: 0.8.2
-sha1_hash: 6c56b416c22c5280f266245cd00eeb152d7990c8
+  name: dbt_utils
+  version: 1.1.1
+sha1_hash: dd20c07a28bff7dd8db16c5a8a3355aec8fc89a9
