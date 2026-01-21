@@ -60,3 +60,4 @@ joined as (
 )
 
 select * from joined
+-- making another comment to show how PRs trigger jobs
