@@ -1,0 +1,22 @@
+models:
+- name: test
+  description: This model provides a detailed overview of customer data, focusing
+    on their spending habits and order history. It is designed to help analyze customer
+    value by ranking them based on their lifetime spend.
+  columns:
+  - name: customer_id
+    description: A unique identifier for each customer.
+  - name: customer_name
+    description: The full name of the customer.
+  - name: count_lifetime_orders
+    description: The total number of orders placed by the customer over their lifetime.
+  - name: first_ordered_at
+    description: The timestamp of the customer's first order.
+  - name: last_ordered_at
+    description: The timestamp of the customer's most recent order.
+  - name: lifetime_spend_pretax
+    description: The total amount spent by the customer before tax.
+  - name: lifetime_spend
+    description: The total amount spent by the customer, including tax.
+  - name: customer_type
+    description: The classification of the customer based on their purchasing behavior.
