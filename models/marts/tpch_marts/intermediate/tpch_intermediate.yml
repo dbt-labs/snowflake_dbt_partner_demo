@@ -3,8 +3,6 @@ version: 2
 models:
   - name: tpch_order_items
     description: Intermediate model where we calculate item price, discounts and tax. This model is at the order item level.
-    tags:
-      - output_table_type|orders
     columns:
       - name: order_item_key
         description: '{{ doc("order_item_key") }}'
@@ -59,7 +57,9 @@ models:
         description: item level tax total
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
-  
+    config:
+      tags:
+        - output_table_type|orders
   - name: tpch_part_suppliers
     description: Intermediate model where we join part, supplier and part_supplier. This model is at the part supplier level.
     columns:

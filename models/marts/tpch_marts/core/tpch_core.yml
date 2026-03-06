@@ -9,13 +9,13 @@ groups:
 models:
 
   - name: dim_tpch_customers
-    group: core_data
-    access: public
     latest_version: 1
     description: Customer dimensions table
     config:
       contract:
         enforced: true
+      group: core_data
+      access: public
     columns:
       - name: customer_key
         description: Primary key on the customers table
@@ -30,8 +30,10 @@ models:
         data_type: text
         tests:
           - accepted_values:
-              values: ['AFRICA','MIDDLE EAST','ASIA','EUROPE','AMERICA']
-              severity: warn
+              config:
+                severity: warn
+              arguments:
+                values: ['AFRICA', 'MIDDLE EAST', 'ASIA', 'EUROPE', 'AMERICA']
       - name: name
         description: customer id
         data_type: text
@@ -45,7 +47,7 @@ models:
         description: 'Nation key'
         data_type: int
         tests:
-         - not_null
+          - not_null
       - name: phone_number
         description: phone number of the customer
         data_type: text
@@ -56,7 +58,7 @@ models:
         description: market segment of the customer
         data_type: text
 
-    versions: 
+    versions:
       - v: 1
         config:
           alias: dim_customers
@@ -70,7 +72,6 @@ models:
             exclude: [nation_key]
 
   - name: dim_tpch_parts
-    access: public
     description: Parts dimensions table
     columns:
       - name: part_key
@@ -93,6 +94,8 @@ models:
       - name: retail_price
         description: '{{ doc("retail_price") }}'
 
+    config:
+      access: public
   - name: dim_tpch_suppliers
     description: Suppliers dimensions table
     columns:
@@ -113,9 +116,7 @@ models:
         description: '{{ doc("phone_number") }}'
       - name: account_balance
         description: '{{ doc("account_balance") }}'
- 
   - name: fct_tpch_order_items
-    access: public
     description: order items fact table
     columns:
       - name: order_item_key
@@ -171,7 +172,8 @@ models:
         description: '{{ doc("item_tax_amount") }}'
       - name: net_item_sales_amount
         description: '{{ doc("net_item_sales_amount") }}'
-  
+    config:
+      access: public
   - name: fct_tpch_orders
     description: orders fact table
     columns:
@@ -184,9 +186,11 @@ models:
         description: foreign key for customers
         tests:
           - relationships:
-              to: ref('dim_tpch_customers', v=1)
-              field: customer_key
-              severity: error
+              config:
+                severity: error
+              arguments:
+                to: ref('dim_tpch_customers', v=1)
+                field: customer_key
       - name: order_date
         description: date of the order
       - name: status_code

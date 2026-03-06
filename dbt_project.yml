@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -21,13 +20,9 @@ test-paths: ["tests"]
 seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
-
-
-
-target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
-    - "target"
-    - "dbt_packages"
+  - "target"
+  - "dbt_packages"
 
 on-run-start:
   - '{{create_udfs()}}' # comment / uncomment this line to build UDFs called in the create_udfs macro
@@ -43,7 +38,9 @@ vars:
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
-
+flags:
+  require_generic_test_arguments_property: true
+  
 models:
   +grants:
     select: ['transformer']
@@ -54,4 +51,4 @@ models:
 
     marts:
       tpch_marts:
-        materialized: table
+        +materialized: table
